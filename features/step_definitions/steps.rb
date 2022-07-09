@@ -4,7 +4,11 @@ Given(/^I am on facebook homepage$/) do
     sleep 2
 end
 
-Then(/^Match title of the page$/) do
-    expect($driver.title.start_with? 'Facebook').to eq(true)
+When(/^I match the title of the page$/) do
+    @matched = $driver.title.start_with? 'Facebook'
+end
+
+Then(/^It should return true$/) do
+    expect(@matched).to eq(true)
     puts "Title of homepage verified"
 end
