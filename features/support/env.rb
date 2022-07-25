@@ -3,10 +3,9 @@ require "selenium-webdriver"
 require "test-unit"
 
 Before do |scenario|
-    driver = Selenium::WebDriver.for :chrome
-    $driver = driver
+    @driver = Selenium::WebDriver.for :chrome
 end
 
 After do |scenario|
-    $driver.close
+    @driver.close
 end
